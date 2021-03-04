@@ -512,10 +512,11 @@
 
 <h3 id="内联样式"><a href="#内联样式" class="headerlink" title="内联样式"></a>内联样式</h3><p>直接在某个标签中定义其样式，效率低。请慎用这种方法，例如当样式仅需要在一个元素上应用一次时。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p style&#x3D;&quot;color:sienna;margin-left:20px&quot;&gt;这是一个段落。&lt;&#x2F;p&gt;</span><br></pre></td></tr></table></figure>
-<p>###导入式（不常用，了解即可）<br>需要放在<code>&lt;head&gt;</code>标签里的<code>&lt;style&gt;</code>标签中</p>
+
+<h3 id="导入式（不常用，了解即可）"><a href="#导入式（不常用，了解即可）" class="headerlink" title="导入式（不常用，了解即可）"></a>导入式（不常用，了解即可）</h3><p>需要放在<code>&lt;head&gt;</code>标签里的<code>&lt;style&gt;</code>标签中</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@ import url(&quot;文件地址&quot;):</span><br></pre></td></tr></table></figure>
-<p>###扩展（多重样式，多重样式的优先级）</p>
-<h4 id="多重样式"><a href="#多重样式" class="headerlink" title="多重样式"></a>多重样式</h4><p>当一种属性在不用样式表中被同样的选择器定义，属性值将会从更具体的样式表中被继承。</p>
+
+<h3 id="扩展（多重样式，多重样式的优先级）"><a href="#扩展（多重样式，多重样式的优先级）" class="headerlink" title="扩展（多重样式，多重样式的优先级）"></a>扩展（多重样式，多重样式的优先级）</h3><h4 id="多重样式"><a href="#多重样式" class="headerlink" title="多重样式"></a>多重样式</h4><p>当一种属性在不用样式表中被同样的选择器定义，属性值将会从更具体的样式表中被继承。</p>
 <h4 id="多重样式优秀级"><a href="#多重样式优秀级" class="headerlink" title="多重样式优秀级"></a>多重样式优秀级</h4><p>一般情况下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">（内联样式）Inline style &gt; （内部样式）Internal style sheet &gt;（外部样式）External style sheet &gt; 浏览器默认样式</span><br></pre></td></tr></table></figure>
 
@@ -536,10 +537,10 @@
 <h3 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h3><p> “.”+class名称，在要使用该样式的标签中用class命名标签。也可以指定特定的HTML元素使用class，例如 p.center{}</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset&#x3D;&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;类选择器的使用&lt;&#x2F;title&gt; </span><br><span class="line">&lt;style&gt;</span><br><span class="line">.center&#123;</span><br><span class="line">	text-align:center;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1 class&#x3D;&quot;center&quot;&gt;标题居中&lt;&#x2F;h1&gt;</span><br><span class="line">&lt;p class&#x3D;&quot;center&quot;&gt;段落居中。&lt;&#x2F;p&gt; </span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
 <p>tips：ID和class的命名不要以数字开头，数字开头的ID在 Mozilla/Firefox 浏览器中不起作用</p>
-<p>###群组选择器、全选择器<br>使用*号来表示 对整个html中的所有标签都起作用<br>(以下省略head和body部分)</p>
+<h3 id="群组选择器、全选择器"><a href="#群组选择器、全选择器" class="headerlink" title="群组选择器、全选择器"></a>群组选择器、全选择器</h3><p>使用*号来表示 对整个html中的所有标签都起作用<br>(以下省略head和body部分)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">div,p,span&#123;&#125;  &#x2F;* 群组选择器 *&#x2F;</span><br><span class="line">*&#123; text-align:center; &#125; &#x2F;* 通配选择器 *&#x2F;</span><br></pre></td></tr></table></figure>
 
-<p>###伪类选择器<br><strong>语法</strong><br>selector:pseudo-class { }</p>
+<h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><p><strong>语法</strong><br>selector:pseudo-class { }</p>
 <p>伪类（pseudo-classes）作用于链接上，可以实现你对链接的不同交互效果。</p>
 <ul>
 <li>link</li>
@@ -547,13 +548,13 @@
 <li>hover</li>
 <li>active</li>
 </ul>
-<p>####1.link<br>用于未访问的链接</p>
+<h4 id="1-link"><a href="#1-link" class="headerlink" title="1.link"></a>1.link</h4><p>用于未访问的链接</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a:link&#123;</span><br><span class="line">     &lt;!--此处为你没有点击过的链接所展示的效果--&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>####2.visited<br>用于以访问链接</p>
+<h4 id="2-visited"><a href="#2-visited" class="headerlink" title="2.visited"></a>2.visited</h4><p>用于以访问链接</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a:visited&#123;</span><br><span class="line">     &lt;!--当你点击链接后，该链接会展示出点击后的效果--&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>####3.hover<br>当鼠标移动到链接上时</p>
+<h4 id="3-hover"><a href="#3-hover" class="headerlink" title="3.hover"></a>3.hover</h4><p>当鼠标移动到链接上时</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a:hover&#123;</span><br><span class="line">      &lt;!--当你鼠标悬停在链接上时链接产生的效果--&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>####4.active<br>按下链接后</p>
+<h4 id="4-active"><a href="#4-active" class="headerlink" title="4.active"></a>4.active</h4><p>按下链接后</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a:active&#123;</span><br><span class="line">     &lt;!--按下链接后链接会发生变化--&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset&#x3D;&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;菜鸟教程(runoob.com)&lt;&#x2F;title&gt; </span><br><span class="line">&lt;style&gt;</span><br><span class="line">a:link &#123;color:#000000;&#125;      &#x2F;* 未访问链接*&#x2F;</span><br><span class="line">a:visited &#123;color:#00FF00;&#125;  &#x2F;* 已访问链接 *&#x2F;</span><br><span class="line">a:hover &#123;color:#FF00FF;&#125;  &#x2F;* 鼠标移动到链接上 *&#x2F;</span><br><span class="line">a:active &#123;color:#0000FF;&#125;  &#x2F;* 鼠标点击时 *&#x2F;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;p&gt;&lt;b&gt;&lt;a href&#x3D;&quot;&#x2F;css&#x2F;&quot; target&#x3D;&quot;_blank&quot;&gt;这是一个链接&lt;&#x2F;a&gt;&lt;&#x2F;b&gt;&lt;&#x2F;p&gt;</span><br><span class="line">&lt;p&gt;&lt;b&gt;注意：&lt;&#x2F;b&gt; 定义的伪类作用于链接&lt;a&gt;标签。&lt;&#x2F;p&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
 
@@ -578,9 +579,9 @@
 <li>文字</li>
 <li>文本</li>
 <li>链接</li>
-<li>列表(有序ul，无序ol)</li>
+<li>列表(有序ul，无序ol)  </li>
 </ul>
-<p>###基本样式<br><strong>长度单位</strong><br>像素px、百分比%、相对字体长度单位em</p>
+<h3 id="基本样式"><a href="#基本样式" class="headerlink" title="基本样式"></a>基本样式</h3><p><strong>长度单位</strong><br>像素px、百分比%、相对字体长度单位em</p>
 <p><strong>样式的类型</strong><br>内联样式、内部样式、外部样式</p>
 <p><strong>颜色表示法</strong></p>
 <ul>
@@ -589,8 +590,7 @@
 <li>rgb表示法：rgb(255,0,0)</li>
 <li>透明颜色：transparent<br>提取颜色工具FeHelper</li>
 </ul>
-<p>###背景</p>
-<ul>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><ul>
 <li><p>背景颜色：background-color:red</p>
 </li>
 <li><p>背景图片：background-image:url(“/example.jpg”)</p>
@@ -606,8 +606,7 @@
 <p>background-size：背景图的尺寸、cover覆盖、contain包含</p>
 <p>background-origin：背景图的填充位置、padding-box（默认）、 border-box、content-box</p>
 <p>background-clip：背景图的裁切方式，padding-box、border-box（默认）、content-box</p>
-<p>###CSS边框样式</p>
-<ul>
+<h3 id="CSS边框样式"><a href="#CSS边框样式" class="headerlink" title="CSS边框样式"></a>CSS边框样式</h3><ul>
 <li>边框风格（border-style）：solid、dashed、dotted</li>
 <li>边框大小（border-width）</li>
 <li>边框颜色（border-color）</li>
@@ -616,16 +615,15 @@
 <p>绘制三角形：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">width: 0;</span><br><span class="line">height: 0;</span><br><span class="line">border-right: solid red 100px;</span><br><span class="line">border-left: solid transparent 100px;</span><br><span class="line">border-top: solid transparent 100px;</span><br><span class="line">border-bottom: solid transparent 100px;</span><br></pre></td></tr></table></figure>
 
-<p>###文字样式</p>
-<ul>
+
+<h3 id="文字样式"><a href="#文字样式" class="headerlink" title="文字样式"></a>文字样式</h3><ul>
 <li>font-family：字体类型，中文、西文，衬线体与非衬线体，注意适当添加引号</li>
 <li>font-size：字体大小，数值|xx-small|x-small|small|medium|- large|x-large|xx-large</li>
 <li>font-weight：字体粗细，数值|normal|bold</li>
 <li>font-style：字体样式，normal|italic|oblique，注意区别italic与oblique</li>
 <li>color：字体颜色</li>
 </ul>
-<p>###段落样式</p>
-<ul>
+<h3 id="段落样式"><a href="#段落样式" class="headerlink" title="段落样式"></a>段落样式</h3><ul>
 <li>text-decoration：文本装饰，underline|overline|line-through|none</li>
 <li>text-transform：文本大小写，lowercase|uppercase|capitalize</li>
 <li>text-indent：首行缩进，数值表示，单位可以选择px、em等</li>
@@ -636,8 +634,7 @@
 <li>折行：word-break: break-all;或者word-wrap: break-word;，注意二者区别</li>
 </ul>
 <h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>具体看伪类部分</p>
-<p>###列表</p>
-<p>##盒子模型<br>所有HTML元素可以看作盒子，在CSS中，”box model”这一术语是用来设计和布局时使用。</p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><p>所有HTML元素可以看作盒子，在CSS中，”box model”这一术语是用来设计和布局时使用。</p>
 <p>CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。</p>
 <p>盒模型允许我们在其它元素和周围元素边框之间的空间放置元素。<br><img src="https://www.runoob.com/images/box-model.gif"></p>
 <ul>
@@ -646,15 +643,15 @@
 <li><strong>Padding(内边距)</strong> - 清除内容周围的区域，内边距是透明的。</li>
 <li><strong>Content(内容)</strong> - 盒子的内容，显示文本和图像。</li>
 </ul>
-<p>###内容Content(即元素)<br>里边是你想要展示的东西</p>
-<p>###内边距Padding</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot;盒子名称&quot;&#123;</span><br><span class="line">     padding:0px;  上下左右</span><br><span class="line">     padding:0px 0px;  对应上下，左右</span><br><span class="line">	 padding:0px 0px 0px 0px; 分别对应上，右，下，左</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="内容Content-即元素"><a href="#内容Content-即元素" class="headerlink" title="内容Content(即元素)"></a>内容Content(即元素)</h3><p>里边是你想要展示的东西</p>
+<h3 id="内边距Padding"><a href="#内边距Padding" class="headerlink" title="内边距Padding"></a>内边距Padding</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot;盒子名称&quot;&#123;</span><br><span class="line">     padding:0px;  上下左右</span><br><span class="line">     padding:0px 0px;  对应上下，左右</span><br><span class="line">	 padding:0px 0px 0px 0px; 分别对应上，右，下，左</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>例如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div&#123;padding: 30px;&#x2F;*上下左右*&#x2F;&#125;</span><br><span class="line">div&#123;padding: 30px 40px;&#x2F;*上下、左右*&#x2F;&#125;</span><br><span class="line">div&#123;padding: 30px 40px 50px 60px;&#x2F;*上、右、下、左*&#x2F;&#125;</span><br></pre></td></tr></table></figure>
 <p>也可以单独设置：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   padding-left:0px;</span><br><span class="line">   padding-right:0px;</span><br><span class="line">   padding-top:0px;</span><br><span class="line">   padding-bottom:0px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>###边框Border<br>可以设置边框大小，边框线的类型，线的颜色</p>
+
+<h3 id="边框Border"><a href="#边框Border" class="headerlink" title="边框Border"></a>边框Border</h3><p>可以设置边框大小，边框线的类型，线的颜色</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    border:1px solid black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
@@ -664,6 +661,7 @@
 <hr>
 <p>颜色,可用颜色代号或者英文<br><code>border-color:#666666</code></p>
 <h3 id="外边距Margin"><a href="#外边距Margin" class="headerlink" title="外边距Margin"></a>外边距Margin</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;盒子名称&quot;&#123;</span><br><span class="line">      margin:     &lt;!--用法同上--&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
 <h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><ul>
 <li>块状元素display:block</li>
@@ -678,7 +676,7 @@
 <li>宽度默认与父容器相同</li>
 <li>占据矩形区域</li>
 </ul>
-<p>###内联元素<br>inline：span、a、em、strong、img ……<br>即盒子与盒子可以同行显示，但不能设置宽和高</p>
+<h3 id="内联元素"><a href="#内联元素" class="headerlink" title="内联元素"></a>内联元素</h3><p>inline：span、a、em、strong、img ……<br>即盒子与盒子可以同行显示，但不能设置宽和高</p>
 <ul>
 <li>紧挨在一起</li>
 <li>不支持某些样式，例如width、height、margin、padding，但img元素支持宽高，因为是替换元素</li>
@@ -686,19 +684,19 @@
 <li>占据区域不一定是矩形</li>
 <li>内联标签之间会有空隙，这是由于换行导致的，一般使用span修饰文本而不是布局，如果非要解决可以将空白的font-size设为0</li>
 </ul>
-<p>###内联块状元素<br>inline-block：input、select ……</p>
+<h3 id="内联块状元素"><a href="#内联块状元素" class="headerlink" title="内联块状元素"></a>内联块状元素</h3><p>inline-block：input、select ……</p>
 <ul>
 <li>紧挨在一起，但是支持宽高</li>
 <li>占据矩形区域</li>
 <li>内联块之间会有空隙</li>
 </ul>
-<p>###隐藏元素<br>这个可以让元素内容不显示<br><code>display:none;   &lt;!--隐藏元素--&gt;</code></p>
+<h3 id="隐藏元素"><a href="#隐藏元素" class="headerlink" title="隐藏元素"></a>隐藏元素</h3><p>这个可以让元素内容不显示<br><code>display:none;   &lt;!--隐藏元素--&gt;</code></p>
 <h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><ul>
 <li>Position（定位）</li>
 <li>Overflow</li>
 <li>Float（浮动）</li>
 </ul>
-<p>###Position<br>position属性指定了元素的定位类型<br>属性值为：</p>
+<h3 id="Position"><a href="#Position" class="headerlink" title="Position"></a>Position</h3><p>position属性指定了元素的定位类型<br>属性值为：</p>
 <ul>
 <li>static</li>
 <li>relative</li>
@@ -706,29 +704,33 @@
 <li>absolute</li>
 <li>sticky</li>
 </ul>
-<p>####static 默认定位<br>默认类型</p>
+<h4 id="static-默认定位"><a href="#static-默认定位" class="headerlink" title="static 默认定位"></a>static 默认定位</h4><p>默认类型</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">div.static &#123;</span><br><span class="line">    position: static;</span><br><span class="line">    border: 3px solid #73AD21;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>####relative 相对定位<br>相对定位，相对正常位置的显示方式，对其进行相对的位移</p>
+
+
+<h4 id="relative-相对定位"><a href="#relative-相对定位" class="headerlink" title="relative 相对定位"></a>relative 相对定位</h4><p>相对定位，相对正常位置的显示方式，对其进行相对的位移</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">h2.pos_left</span><br><span class="line">&#123;</span><br><span class="line">    position:relative;</span><br><span class="line">    left:-20px;</span><br><span class="line">&#125;</span><br><span class="line">h2.pos_right</span><br><span class="line">&#123;</span><br><span class="line">    position:relative;</span><br><span class="line">    left:20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>相对定位元素经常被用来作为绝对定位元素的容器块</p>
-<p>####fixed 固定定位<br>元素的位置相对于浏览器窗口是固定位置。<br>即使窗口是滚动的它也不会移动：</p>
+<h4 id="fixed-固定定位"><a href="#fixed-固定定位" class="headerlink" title="fixed 固定定位"></a>fixed 固定定位</h4><p>元素的位置相对于浏览器窗口是固定位置。<br>即使窗口是滚动的它也不会移动：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">p.pos_fixed</span><br><span class="line">&#123;</span><br><span class="line">    position:fixed;</span><br><span class="line">    top:30px;</span><br><span class="line">    right:5px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Fixed定位使元素的位置与文档流无关，因此不占据空间。<br>Fixed定位的元素和其他元素重叠。</p>
-<p>####absolute 绝对定位<br>绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于<code>&lt;html&gt;</code></p>
+<h4 id="absolute-绝对定位"><a href="#absolute-绝对定位" class="headerlink" title="absolute 绝对定位"></a>absolute 绝对定位</h4><p>绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于<code>&lt;html&gt;</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">h2</span><br><span class="line">&#123;</span><br><span class="line">    position:absolute;</span><br><span class="line">    left:100px;</span><br><span class="line">    top:150px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>absolute 定位使元素的位置与文档流无关，因此不占据空间。<br>absolute 定位的元素和其他元素重叠。</p>
-<p>####sticky 黏性定位，进行黏性操作<br>比如在Excel中将首行冻结置顶，无论滚动条如何滚动，始终在第一行</p>
+<h4 id="sticky-黏性定位，进行黏性操作"><a href="#sticky-黏性定位，进行黏性操作" class="headerlink" title="sticky 黏性定位，进行黏性操作"></a>sticky 黏性定位，进行黏性操作</h4><p>比如在Excel中将首行冻结置顶，无论滚动条如何滚动，始终在第一行</p>
 <ul>
 <li>配合偏移量使用，否则不起作用<br><code>&lt;div style=&quot;padding-bottom:2000px&quot;&gt;</code></li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">div.sticky &#123;</span><br><span class="line">    position: -webkit-sticky; &#x2F;* Safari *&#x2F;</span><br><span class="line">    position: sticky;</span><br><span class="line">    top: 0;</span><br><span class="line">    background-color: green;</span><br><span class="line">    border: 2px solid #4CAF50;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>####重叠的元素<br>元素的定位与文档流无关，所以它们可以覆盖页面上的其它元素</p>
+
+<h4 id="重叠的元素"><a href="#重叠的元素" class="headerlink" title="重叠的元素"></a>重叠的元素</h4><p>元素的定位与文档流无关，所以它们可以覆盖页面上的其它元素</p>
 <p>z-index属性指定了一个元素的堆叠顺序（哪个元素应该放在前面，或后面）</p>
 <p>一个元素可以有正数或负数的堆叠顺序</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">img</span><br><span class="line">&#123;</span><br><span class="line">    position:absolute;</span><br><span class="line">    left:0px;</span><br><span class="line">    top:0px;</span><br><span class="line">    z-index:-1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>###Float（浮动）<br><strong>什么是CSS Float（浮动）？</strong><br>CSS 的 Float（浮动），会使元素向左或向右移动，其周围的元素也会重新排列。<br>Float（浮动），往往是用于图像，但它在布局时一样非常有用</p>
+
+<h3 id="Float（浮动）"><a href="#Float（浮动）" class="headerlink" title="Float（浮动）"></a>Float（浮动）</h3><p><strong>什么是CSS Float（浮动）？</strong><br>CSS 的 Float（浮动），会使元素向左或向右移动，其周围的元素也会重新排列。<br>Float（浮动），往往是用于图像，但它在布局时一样非常有用</p>
 <p><strong>元素怎样浮动</strong><br>元素的水平方向浮动，意味着元素只能左右移动而不能上下移动。</p>
 <p>一个浮动元素会尽量向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。</p>
 <p>浮动元素之后的元素将围绕它。</p>
