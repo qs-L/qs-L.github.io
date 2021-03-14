@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="我的第一篇博客文章, Qs">
+    <meta name="keywords" content="Linux, Qs">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>我的第一篇博客文章 | Qs</title>
+    <title>Linux | Qs</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -323,12 +323,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">我的第一篇博客文章</h1>
+                    <h1 class="description center-align post-title">Linux</h1>
                 </div>
             </div>
         </div>
@@ -444,8 +444,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Blog/">
-                                <span class="chip bg-color">Blog</span>
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
                             </a>
                         
                     </div>
@@ -456,8 +456,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Blog/" class="post-category">
-                                Blog
+                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="post-category">
+                                操作系统
                             </a>
                         
                     </div>
@@ -469,7 +469,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-25
+                    2021-03-14
                 </div>
                 
 
@@ -478,7 +478,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    17
+                    2k
                 </div>
                 
 
@@ -495,13 +495,117 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容</p>
-<hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
-<hr>
-<p>##参考文献</p>
-<p><a target="_blank" rel="noopener" href="http://www.lqsblog.cn/">www.lqsblog.cn</a></p>
+                <h2 id="linux系统基础"><a href="#linux系统基础" class="headerlink" title="linux系统基础"></a>linux系统基础</h2><p>uname -a<br>nuame -r : 查看内核版本号(主版本号.此版本号.修正次数)3.10.0<br>次版本号：若偶数，表示稳定版内核，奇数为开发版内核</p>
+<p>fdisk -l : 查看查看硬盘大小以及分区<br>信息内容：<br>其中第一行： Disk /dev/sda ： 硬盘大小(其是除1000得出来的) ，字节<br>在linux中一切皆文件，sda就是硬盘的文件名 sd表示硬盘接口，a 表示第一块硬盘，若sda1，1为第一分区</p>
+<p>cat /proc/cpuinfo： 查看系统cpu信息<br>信息内容：</p>
+<ul>
+<li>processor： 表示第几个核心，第一个核心显示为0</li>
+<li>model_name： CPU版本</li>
+<li>flags：（显示了你的cpu所带的功能，比如你的cpu支不支持硬件虚拟化，支不支持超频等）</li>
+</ul>
+<p>cat /proc/meminfo： 查看内存信息</p>
+<h3 id="系统优化"><a href="#系统优化" class="headerlink" title="系统优化"></a>系统优化</h3><ul>
+<li>关闭防火墙</li>
+<li>关闭selinux服务</li>
+</ul>
+<h4 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h4><p>Centos7默认安装了firewalld，如果没有安装的话，可以使用 yum install firewalld firewalld-config进行安装。</p>
+<p>1.启动防火墙<br>systemctl start firewalld </p>
+<p>2.禁用防火墙<br>systemctl stop firewalld</p>
+<p>3.设置开机启动<br>systemctl enable firewalld</p>
+<p>4.停止并禁用开机启动<br>sytemctl disable firewalld</p>
+<p>5.重启防火墙<br>firewall-cmd –reload</p>
+<p>6.查看状态<br>systemctl status firewalld或者 iptables -nL</p>
+<p>7.查看版本<br>firewall-cmd –version</p>
+<p>8.查看帮助<br>firewall-cmd –help</p>
+<h4 id="selinux服务"><a href="#selinux服务" class="headerlink" title="selinux服务"></a>selinux服务</h4><p><strong>查看selinux状态</strong><br>sestatus（SElinux STATUS）查看状态。</p>
+<p>还有一种方法，可以直接看模式。<br>getenforce查看当前模式。disable就是代表关闭</p>
+<p><strong>配置：</strong><br>selinux的配置文件是/etc/selinux/config</p>
+<p>vim /etc/selinux/config打开selinux配置文件<br>selinux有三种模式： enforcing开启； permissive，不开启但有通知； disabled 关闭</p>
+<p>配置完成后 reboot命令，重启生效</p>
+<h4 id="安装-vmware-tools"><a href="#安装-vmware-tools" class="headerlink" title="安装 vmware-tools"></a>安装 vmware-tools</h4><p>安装这个支持物理机和虚拟机之间的文件拖拽，复制，粘贴等。<br>在安装linux的时候，选择以什么形式安装时(最小安装，GUI等)，选择附加一个开发工具<br>从光盘中考出压缩包，右键解压缩到桌面<br>./wmware-install.pl -d   #-d就是default默认安装的意思，不然后边会有很多选项要问你</p>
+<h3 id="linux中根目录-中各文件夹的作用"><a href="#linux中根目录-中各文件夹的作用" class="headerlink" title="linux中根目录/中各文件夹的作用"></a>linux中根目录/中各文件夹的作用</h3><ul>
+<li><p>/ ：根目录 系统的起始目录</p>
+</li>
+<li><p>/bin：保存了管理员和普通用户都可以执行的命令字</p>
+</li>
+<li><p>/sbin：只有管理员可以执行的命令</p>
+</li>
+<li><p>/boot：引导目录 它是一个独立的分区，挂载的分区是/dev/sda1 ，具有内核、启动菜单还有初始化镜像光盘(驱动盘)</p>
+</li>
+<li><p>/dev：device设备文件存放目录。 什么是设备文件，比如：硬盘 /dev/sda 这就是设备文件</p>
+</li>
+<li><p>/etc 配置文件存放目录。 配置文件：比如调整了屏幕分辨率，下次电脑重启的时候还是调整过后的分辨率，etc就是存储了配置信息的，每次启动时，内存加载它们，然后系统就根据其定义</p>
+</li>
+<li><p>/home：普通用户的家目录  保存了各个普通用户的配置文件</p>
+</li>
+<li><p>/root：root用户的家目录 超级管理员有自己的一个单独的目录root</p>
+</li>
+<li><p>/media(媒体)：光驱默认的挂载目录(光盘放入，就上这找)</p>
+</li>
+<li><p>/mnt(mount): 临时设备的挂载目录(u盘等外界设备接入，就上这找)</p>
+</li>
+<li><p>/proc：process进程，进程状态存放目录（内存状态，不占用硬盘空间）</p>
+</li>
+<li><p>/tmp：临时文件存放目录</p>
+</li>
+<li><p>/usr：GNU社区软件的默认安装目录</p>
+</li>
+<li><p>/var：常变文件存放目录 eg：日志文件存放目录 </p>
+</li>
+<li><p>/lib 和/lib64 ： 函数库(开发相关，安全方向关联)</p>
+</li>
+<li><p>还有一些不太重要的文件夹，就不一一叙说了</p>
+</li>
+</ul>
+<h3 id="linux中颜色的相关表示"><a href="#linux中颜色的相关表示" class="headerlink" title="linux中颜色的相关表示"></a>linux中颜色的相关表示</h3><p>颜色：</p>
+<ul>
+<li>蓝色字体：目录</li>
+<li>浅蓝色：表示符号链接(快捷方式)</li>
+<li>黑色：普通文件，在纯命令行界面，为白色</li>
+<li>绿色：表示可执行文件</li>
+<li>红色：压缩文件或者包文件</li>
+<li>黑底黄字：设备文件</li>
+<li>紫色：图片文件 或 模块文件</li>
+<li>红色闪烁： 表示链接文件有问题了</li>
+</ul>
+<h3 id="基础知识："><a href="#基础知识：" class="headerlink" title="基础知识："></a>基础知识：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">用“dircolors -p”命令可以看到颜色设置，包括个颜色和“粗体”，下划线，闪烁等的定义</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[root@localhost &#x2F;]#</span><br><span class="line">[当前登录的用户名@主机名 当前工作的目录名称]</span><br><span class="line">当前工作目录名称有一个特殊 ~：表示自己的home</span><br><span class="line">&#96;#&#96;：表示当前用户为超级管理员root</span><br><span class="line">&#96;$&#96;：表示当前用户身份为普通用户</span><br></pre></td></tr></table></figure>
+<h2 id="linux的基础命令"><a href="#linux的基础命令" class="headerlink" title="linux的基础命令"></a>linux的基础命令</h2><ul>
+<li><p>ls ：列出当前目录下的内容。 ls -l：显示文件长信息</p>
+</li>
+<li><p>pwd：列出当前工作目录（print working directory</p>
+</li>
+<li><p>cd： 改变目录(绝对路径(从 根目录 /出发的绝对路径)，相对路径(所在目录与目标目录的相对路径) change directory)</p>
+</li>
+<li><p>cat：查看文件内容。 cat -n 在显示文件内容的同时显示文件行号<br>touch：建立一个空文件 eg： touch linux.txt(后缀不重要) 和 更新文件的时间标记 两个功能</p>
+</li>
+<li><p>echo：输出 电脑显示屏上输出，但可以通过重定向符号 &gt; 输出到别的地方<br>例如： echo “I love you” &gt; linux.txt 则将内容重定向写到了linux.txt文件中。用单个 &gt; 将内容编写到linux.txt文件中会覆盖原先的内容，此时只要用<br>echo “I love you” &gt;&gt; linux.txt 就可以追加内容，而不覆盖</p>
+</li>
+<li><p>mkdir：创建目录  -p：递归建立目录父目录 eg：mkdir -p /tmp/a/b/c 创建目录时，当发现父目录不存在的时候，会立刻创建父目录</p>
+</li>
+<li><p>mv：move 两个功能：1.剪切 mv linux.txt /root/Desktop/ 2.重命名 mv 原文件名字 要改的名字<br>两个功能一起用：mv /root/Desktop/a.txt /tmp/b.txt<br>将桌面的文件a 剪切到 tmp文件夹中，并且重命名为b</p>
+</li>
+<li><p>cp：copy 复制文件 eg：copy 文件名 到哪个地方。  cp -r：递归复制，此方法可以用来拷贝目录，因为目录中有很多文件，不加参数-r拷贝目录的话会报错。</p>
+</li>
+<li><p>rm：remove 移除 remove 文件名 ，删文件的时候会要求你确认是否删除，还要打上y才能删除 为了避免这种麻烦，使用 rm -f 就不会再次询问你了。 rm -rf ：递归强制删除， 可以删除目录</p>
+</li>
+<li><p>ln：链接建立 link 文件和目录都可以建立链接 ln -s 原文件(绝对路径) 链接文件<br>将文件夹 tmp中的a文件 链接到桌面，以alink命名<br>ln -s /tmp/a /root/Desktop/alink<br>注意： 链接的时候，原文件一定要用绝对路径来表示，不然建立的链接是一个坏的链接  -s 表示符号链接</p>
+<h2 id="进阶命令"><a href="#进阶命令" class="headerlink" title="进阶命令"></a>进阶命令</h2><h3 id="磁盘管理"><a href="#磁盘管理" class="headerlink" title="磁盘管理"></a>磁盘管理</h3></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">du -sh *    #查看当前路径下各个文件大小</span><br><span class="line">df -h        #查看硬盘空间 </span><br><span class="line">fdisk -l    #查看所挂载硬盘个数及分区情况</span><br></pre></td></tr></table></figure>
 
+<h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ps -u  #可以看到当前进程的用户</span><br><span class="line">kill -9  #来强制终止退出</span><br><span class="line">ps -ef|grep LOCAL&#x3D;NO|grep -v grep|cut -c 9-15|xargs kill -9   # kill LOCAL&#x3D;NO 全部关联进程</span><br><span class="line">ps -ef|grep aaa|grep -v grep|awk  &#39;&#123;print &quot;kill -9 &quot; $2&#125;&#39; |sh    # 批量kill进程</span><br><span class="line">pkill -u name  #kill掉某个用户的所有进程</span><br><span class="line">killall -u name  #kill掉某个用户的所有进程</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>###查看进程，GPU</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nvidia-smi   #查看Nvidia显卡信息及使用情况</span><br><span class="line">gpustat     #这个更好</span><br><span class="line">top  #查看实时进程</span><br><span class="line">htop  #更形象的看cpu使用情况</span><br><span class="line">watch -n 0.5 nvidia-smi #周期性的输出显卡的使用情况 0.5s</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">nohup cmmand &amp;    #  后台运行而且退出登陆不停止运行</span><br><span class="line">cat nohup.out     #可以查看具体运行情况</span><br><span class="line"></span><br><span class="line">nohup sh classDBasketballPass.sh &amp;</span><br><span class="line">nohup sh classDBlowingBubbles.sh &amp;</span><br><span class="line">nohup sh classDBQSquare.sh &amp;</span><br><span class="line">nohup sh classDRaceHorses.sh &amp;</span><br><span class="line">#属于并行运行</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod  777 file_name    # 更改文件权限</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="远程文件传输"><a href="#远程文件传输" class="headerlink" title="远程文件传输"></a>远程文件传输</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scp -P 4588 remote@111.11.111.11:&#x2F;usr&#x2F;local&#x2F;sin.sh &#x2F;home&#x2F;administrator  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
@@ -527,7 +631,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://lqsblog.cn/posts/15650.html">http://lqsblog.cn/posts/15650.html</a>
+                    <a href="http://lqsblog.cn/posts/15691.html">http://lqsblog.cn/posts/15691.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -565,8 +669,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Blog/">
-                                    <span class="chip bg-color">Blog</span>
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
                                 </a>
                             
                         </div>
@@ -738,17 +842,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/54626.html">
+                <a href="/posts/15691.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="HTML">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Linux">
                         
-                        <span class="card-title">HTML</span>
+                        <span class="card-title">Linux</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -758,26 +863,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="post-category">
+                                    操作系统
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/HTML/">
-                        <span class="chip bg-color">HTML</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
@@ -791,13 +897,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/16107.html">
+                <a href="/posts/29900.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="SQL">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">SQL</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -808,15 +914,27 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-10
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Qs
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    数据库
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/SQL/">
+                        <span class="chip bg-color">SQL</span>
+                    </a>
+                    
                 </div>
                 
             </div>
