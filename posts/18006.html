@@ -478,7 +478,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    8.8k
+                    9.5k
                 </div>
                 
 
@@ -803,6 +803,30 @@
 
 
 <h3 id="DOM-事件"><a href="#DOM-事件" class="headerlink" title="DOM 事件"></a>DOM 事件</h3><h4 id="事件概述"><a href="#事件概述" class="headerlink" title="事件概述"></a>事件概述</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">事件三要素：</span><br><span class="line">1.	事件源：被监听的html元素（就是这个事件加给谁），就是某个（某些）html标签</span><br><span class="line">2.	事件类型：某类动作，例如点击事件，移入移除事件，敲击键盘事件等</span><br><span class="line">3.	执行指令：事件触发后需要执行的代码，一般使用函数进行封装</span><br><span class="line">语法格式：事件源.事件类型&#x3D;执行指令</span><br></pre></td></tr></table></figure>
+<h4 id="js事件写法"><a href="#js事件写法" class="headerlink" title="js事件写法"></a>js事件写法</h4><p>事件:  可以理解为:一件事</p>
+<ul>
+<li>以<strong>on前缀开始</strong>   <strong>on</strong>事件名<br>事件<strong>不会自己执行,需要触发</strong>(事件要被触发才可以执行)</li>
+</ul>
+<p><strong>事件三要素:</strong></p>
+<ul>
+<li>事件对象</li>
+<li>事件名称</li>
+<li>事件处理函数</li>
+</ul>
+<h4 id="js中事件的书写的三种位置"><a href="#js中事件的书写的三种位置" class="headerlink" title="js中事件的书写的三种位置"></a>js中事件的书写的三种位置</h4><p>1.1 行内注册事件<br>1.1 在行内直接写函数，嵌入式(传统的事件绑定方法）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;box&quot; onclick&#x3D;&quot;&#123;alert(245)&#125;&quot;&gt;&lt;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;button onclick&#x3D;&#39;alert(&quot;hello&quot;)&#39;&gt;点击按钮&lt;&#x2F;button&gt;</span><br><span class="line">等等</span><br><span class="line"></span><br><span class="line">优点:简单易懂</span><br><span class="line">    缺点:将JavaScript代码与html代码混为一体,不利于多人协作开发</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>1.2 或者在行内调用已经写好的函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;box&quot; onclick&#x3D;&quot;fun()&quot;&gt;&lt;div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    function fun()&#123;</span><br><span class="line">    alert(234);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2 页面内注册事件</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; html 页面</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;box&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&#x2F;&#x2F; js结构</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var div &#x3D; document.querySelector(&#39;.box&#39;);</span><br><span class="line">    div.addEventListener(&#39;click&#39;, function() &#123;</span><br><span class="line">        alert(&#39;hello world&#39;);</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>3 引入外部的js实现注册</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 引入外部的js</span><br><span class="line"> &lt;script src&#x3D;&quot;.&#x2F;js&#x2F;unimportant.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>拓展：</strong><br>在W3C标准中：事件可以写在行内，但是因为结构和行为要分离，所以我们一半情况下用JS的方法来绑定事件，只有在极少数情况下，才将事件写在行内。<br>行内事件又叫：HTML事件处理程序，html事件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">js事件：</span><br><span class="line">事件的绑定方法：</span><br><span class="line"></span><br><span class="line">浏览器中的节点(节点).on事件名 &#x3D; function()&#123; 要干什么？(放在浏览器中，不执行，当事件发生的时候再执行) &#125;</span><br><span class="line"></span><br><span class="line">在以下实例中，按钮元素中添加了 onclick 属性 (并加上代码):</span><br><span class="line">&lt;button onclick&#x3D;&quot;getElementById(&#39;demo&#39;).innerHTML&#x3D;Date()&quot;&gt;现在的时间是?&lt;&#x2F;button&gt;</span><br><span class="line">以上实例中，JavaScript 代码将修改 id&#x3D;&quot;demo&quot; 元素的内容。</span><br></pre></td></tr></table></figure>
+<p>总结：事件就是给浏览器定义一个预处理函数，当事件触发的时候，执行函数，这就是事件。在这里插入代码片</p>
 <h4 id="常用的事件："><a href="#常用的事件：" class="headerlink" title="常用的事件："></a>常用的事件：</h4><table>
 <thead>
 <tr>
@@ -871,6 +895,10 @@
 <td align="center">鼠标被移动</td>
 </tr>
 </tbody></table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">事件的分类：</span><br><span class="line">鼠标事件：</span><br><span class="line">    onclick        单击</span><br><span class="line">    ondblclick     双击</span><br><span class="line">    onmousedown    按下</span><br><span class="line">    onmouseup      抬起</span><br><span class="line">    onmousemove    移动</span><br><span class="line">    onmouseover    放上去        onmouseenter    进入</span><br><span class="line">    onmouseout     离开          onmouseleave    离开</span><br><span class="line"></span><br><span class="line">    onmousewheel   滚轮事件</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    onmouseenter和onmouseleave不支持事件冒泡</span><br><span class="line">    </span><br><span class="line">表单事件：</span><br><span class="line">    onsubmit       提交</span><br><span class="line">    onfocus        获得焦点</span><br><span class="line">    onblur         失去焦点</span><br><span class="line">    onchange       改变文本区域的内容</span><br><span class="line"></span><br><span class="line">页面事件：</span><br><span class="line">    onload         加载完成</span><br><span class="line"></span><br><span class="line">键盘事件：</span><br><span class="line">等等</span><br></pre></td></tr></table></figure>
+
+
+
 <h5 id="onclick-事件"><a href="#onclick-事件" class="headerlink" title="onclick 事件"></a>onclick 事件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">实例onclick，当用户在 &lt;h1&gt; 元素上点击时，会改变其内容：</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1 onclick&#x3D;&quot;this.innerHTML&#x3D;&#39;Ooops!&#39;&quot;&gt;点击文本!&lt;&#x2F;h1&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
 <p>HTML事件属性</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">向 button 元素分配 onclick 事件</span><br><span class="line">名为 displayDate 的函数将在按钮被点击时执行。</span><br><span class="line"></span><br><span class="line">&lt;button onclick&#x3D;&quot;displayDate()&quot;&gt;点这里&lt;&#x2F;button&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">function displayDate()&#123;</span><br><span class="line">	document.getElementById(&quot;demo&quot;).innerHTML&#x3D;Date();</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">&lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br></pre></td></tr></table></figure>
@@ -1456,7 +1484,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">36.8k</span>&nbsp;字
+                class="white-color">38k</span>&nbsp;字
             
             
             
